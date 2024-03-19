@@ -18,5 +18,23 @@
     This domain is owned by Seif Ddine Ben Amara
 </div>
 <!-- Your portfolio content here -->
+<div id="counter" class="alert-box">
+    <?php
+        // File to store the visitor count
+        $counter_file = 'visitor_count.txt';
+
+        // Read the current visitor count from the file
+        $visits = intval(file_get_contents($counter_file));
+
+        // Increment the visitor count
+        $visits++;
+
+        // Update the visitor count in the file
+        file_put_contents($counter_file, $visits);
+
+        // Display the visitor count
+        echo "Visitors: " . $visits;
+    ?>
+</div>
 </body>
 </html>
